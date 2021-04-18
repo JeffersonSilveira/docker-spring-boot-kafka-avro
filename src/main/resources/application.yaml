@@ -9,15 +9,12 @@ spring:
     bootstrap-servers:
       - localhost:9092
     properties:
-      auto.register.schemas: true
-      value.subject.name.strategy: io.confluent.kafka.serializers.subject.TopicRecordNameStrategy
       schema.registry.url: http://localhost:8081
-
-    consumer:
-      group-id: group_id
-      auto-offset-reset: latest
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+#    consumer:
+#      group-id: group_id
+#      auto-offset-reset: latest
+#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
 #      properties:
 #        interceptor.classes: io.confluent.monitoring.clients.interceptor.MonitoringConsumerInterceptor
     producer:
@@ -25,8 +22,8 @@ spring:
       value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
       properties:
         interceptor.classes: io.confluent.monitoring.clients.interceptor.MonitoringProducerInterceptor
-#    template:
-#      default-topic:
+    template:
+      default-topic:
 logging:
   level:
     root: info

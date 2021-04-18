@@ -53,4 +53,4 @@ services:
 
 networks:
   broker-kafka:
-    driver: bridge  
+    driver: bridge
